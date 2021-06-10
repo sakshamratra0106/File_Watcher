@@ -1,0 +1,2 @@
+source_system,type_of_source_location,src_loc,source_filename,dst_loc,target_filename,watcher_life_hours,watching_frequency_minutes
+a,loc,D:\Switch\Material\File Watcher\File_Watcher_Source_Folder,Untitled.ipynb,D:\\Switch\Material\\File Watcher\\File_Watcher_Destination_Folder,Untitled.ipynb,2,10
