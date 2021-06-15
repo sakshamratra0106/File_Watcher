@@ -19,7 +19,8 @@ import paramiko
 def copy_file_from_loc_dir(src_loc, source_filename, dst_loc, target_filename):
     shutil.copy(src_loc + forward_slash + source_filename, dst_loc + forward_slash + target_filename)
     print("Copied file from {source} to {destination}.\n".format(source=src_loc + forward_slash + source_filename,
-                                         destination =dst_loc + forward_slash + target_filename))
+                                                                 destination=dst_loc + forward_slash + target_filename))
+
 
 
 # S3 File Fetch
@@ -30,11 +31,12 @@ def copy_file_from_s3(bucket_name, source_filename, dst_loc, target_filename):
                               aws_secret_access_key=aws_secret_access_key)
     my_bucket = resource.Bucket(bucket_name)
     my_bucket.download_file(source_filename, dst_loc + forward_slash + target_filename)
-    print("Copied file from S3:{source} to {destination}.\n".format(source=bucket_name + source_filename,
-                                          destination=dst_loc + forward_slash + target_filename))
+    print("Copied file from S3:{source} to {destination}.\n"
+          .format(source=bucket_name + forward_slash + source_filename,
+                  destination=dst_loc + forward_slash + target_filename))
 
 
-#SFTP File Fetch
+# SFTP File Fetch
 
 def copy_file_from_sftp(sftp_remote_path, sftp_source_filename, dst_loc, target_filename):
     ssh = paramiko.SSHClient()
